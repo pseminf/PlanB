@@ -1,3 +1,17 @@
+Ergänzungen:
+Die eingefügten Bibliotheken in den Ordner libraries kopieren
+in TTN ein neues End-Device anlegen mit ABP, dann die Daten in Credentials.h einfügen. Vor die DevAdr 0x einfügen.
+
+In txbuffer werden die übertragenen Daten abgelegt.
+Der Text wird in der Datei sensor.ino festgelegt.
+Die Größe von txbuffer wird in LoraWan3.ino festgelegt.
+
+Nach dem übertragen des geänderten Programms an den ESP32 muss in TTN in Application - End Device - General Settings das Device resetet werden.
+In Formater - Uplink muss ein Decoder eingefügt werden, z.B. für Text https://core-electronics.com.au/tutorials/encoding-and-decoding-payloads-on-the-things-network.html
+ 
+
+
+
 # TTGO PAXCOUNTER (LoRa32-V2.1-TTN version T3_v1.6 20180606)
 
 TTGO LoRa32 V2.1 Sketch for TTN (The Things Network) with downlink control for turning a relais off or on. This Sketch has support for a BME280 Temperature, Hunidity and Pressure sensor.
