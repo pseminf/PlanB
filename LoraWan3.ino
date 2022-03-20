@@ -26,6 +26,7 @@
 bool ssd1306_found = false;
 bool bmp280_found = false;
 bool relais_on = false;
+uint32_t counter = 0;
 
 // Message counter, stored in RTC memory, survives deep sleep
 RTC_DATA_ATTR uint32_t count = 0;
@@ -235,6 +236,8 @@ void setup() {
   ttn_join();
   ttn_sf(LORAWAN_SF);
   ttn_adr(LORAWAN_ADR);
+
+  
 }
 
 
@@ -248,9 +251,12 @@ void loop() {
   static uint32_t last = 0;
   static bool first = true;
   if (0 == last || millis() - last > SEND_INTERVAL) {
+      counter++;
       last = millis();
       first = false;
       Serial.println("TRANSMITTING");
       send();
+      screen_print("TRANSMITTING Pckt ");
+      delay(MESSAGE_TO_SLEEP_DELAY);
   }
 }

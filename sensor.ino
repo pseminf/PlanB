@@ -55,7 +55,7 @@ return 11.0;
 void buildPacket(uint8_t txBuffer[7])
 {
   char buffer[40];
-
+/*
   //
   // Relais
   //
@@ -70,6 +70,10 @@ void buildPacket(uint8_t txBuffer[7])
     txBuffer[0] = ( 00 ) & 0xFF;
     Serial.println("Relais = Off");
   }
+*/
+
+//TEST
+txBuffer[0] = 99999999;
 
   //
   // Humidity
