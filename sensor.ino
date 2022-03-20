@@ -72,8 +72,7 @@ void buildPacket(uint8_t txBuffer[7])
   }
 */
 
-//TEST
-txBuffer[0] = 99999999;
+
 
   //
   // Humidity
@@ -157,4 +156,12 @@ uint16_t payloadTemp = 11;
 
   txBuffer[5] = tempLow;
   txBuffer[6] = tempHigh;
+
+  //TEST
+      String var = "Hallo";
+    txBuffer[0] = var[0];
+    txBuffer[1] = var[1];
+    txBuffer[2] = var[2];
+    txBuffer[3] = var[3];
+    txBuffer[4] = var[4];
 }

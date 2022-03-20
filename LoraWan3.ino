@@ -32,7 +32,7 @@ uint32_t counter = 0;
 RTC_DATA_ATTR uint32_t count = 0;
 
 //enter the length of the payload in bytes (this has to be more than 3 if you want to receive downlinks)
-static uint8_t txBuffer[7];
+static uint8_t txBuffer[50];
 
 //downlink payload
 static uint8_t rxBuffer[1];
@@ -42,7 +42,14 @@ static uint8_t rxBuffer[1];
 // -----------------------------------------------------------------------------
 
 void send() {
-  buildPacket(txBuffer);
+
+//TEST
+
+
+
+    buildPacket(txBuffer);
+
+  
 
 #if LORAWAN_CONFIRMED_EVERY > 0
   bool confirmed = (count % LORAWAN_CONFIRMED_EVERY == 0);
