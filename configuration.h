@@ -90,7 +90,7 @@ void ttn_register(void (*callback)(uint8_t message));
 // -----------------------------------------------------------------------------
 
 #define SSD1306_ADDRESS 0x3C
-#define BMP280_ADDRESS 0x76
+#define BMP280_ADDRESS 0x77
 
 // -----------------------------------------------------------------------------
 // LoRa SPI

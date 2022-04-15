@@ -47,7 +47,7 @@ void send() {
 
 
 
-    buildPacket(txBuffer);
+buildPacket(txBuffer);
 
   
 
@@ -183,6 +183,7 @@ void scanI2Cdevice(void)
                 Serial.println("ssd1306 display found");
             }
             if (addr == BMP280_ADDRESS) {
+
                 bmp280_found = true;
                 Serial.println("bmp280 sensor found");
             }
@@ -210,6 +211,7 @@ void setup() {
 // Scan for I2C devices
   Wire.begin(I2C_SDA, I2C_SCL);
   scanI2Cdevice();
+  
 
 // SET BUILT-IN LED TO OUTPUT
   pinMode(LED_PIN, OUTPUT);
@@ -220,8 +222,12 @@ void setup() {
 // Display
   screen_setup();
 
+  //Test, ob BME280 Sensor gefunden wurde
+  if (bmp280_found){
+    screen_print("bme ok");
+  }
 // Init BME280
-//  bme_setup();
+  bme_setup();
 
 // Show logo on first boot
   if (0 == count) {
@@ -263,7 +269,5 @@ void loop() {
       first = false;
       Serial.println("TRANSMITTING");
       send();
-      screen_print("TRANSMITTING Pckt ");
-      delay(MESSAGE_TO_SLEEP_DELAY);
   }
 }

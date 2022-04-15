@@ -9,6 +9,7 @@ Die Größe von txbuffer wird in LoraWan3.ino festgelegt.
 Nach dem übertragen des geänderten Programms an den ESP32 muss in TTN in Application - End Device - General Settings das Device resetet werden.
 In Formater - Uplink muss ein Decoder eingefügt werden, z.B. für Text https://core-electronics.com.au/tutorials/encoding-and-decoding-payloads-on-the-things-network.html
  
+Sensor BME280 anschließen: 5V, GND daneben (!), gelb an SCL 22, blau an SDA 21 (siehe Pinbelegung unten); In configuration.h #define BMP280_ADDRESS 0x77 lassen;
 
 
 
