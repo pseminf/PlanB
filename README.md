@@ -1,5 +1,16 @@
 Ergänzungen:
-Die eingefügten Bibliotheken in den Ordner libraries kopieren
+
+In Arduino IDE das Board richtig anzusprechen und ein Programm ("Sketch") auszuführen.
+1. Schritt: In der Arduino IDE unter Datei/Voreinstellungen zuerst die URL für den neuen Boardverwalter eingegeben: https://dl.espressif.com/dl/package_esp32_index.json
+2. In Werkzeuge/Board/Boardverwalter  (ganz oben) den Eintrag ESP32 suchen und dann auf installieren klicken.
+3. In Werkzeuge/Board/ danach der Eintrag ESP32 Arduino angezeigt. Bei den Untereinträgen findet man (ziemlich weit unten) TTGO Lora32-OLED v2.1.16.
+Nach dem Auswählen, danach noch den Port einstellen (bei mir wird trotzdem none angezeigt) und dann einfach das erste (leere) Sketch hochladen. Läuft ohne Fehlermeldung durch und startet automatisch.
+
+Die in Github abgelegten Quelltextdateien (=Dateien im Hauptverzeichnis) in den Projektordner Arduino/LoraWan3 kopieren 
+Die in Github abgelegten Bibliotheken (=die Ordner) in den Ordner Arduino/libraries kopieren
+Danach sollte die Quelltextdatei LoraWan3 in der Arduino-IDE kompilieren.
+
+
 in TTN ein neues End-Device anlegen mit ABP, dann die Daten in Credentials.h einfügen. Vor die DevAdr 0x einfügen.
 
 In txbuffer werden die übertragenen Daten abgelegt.
